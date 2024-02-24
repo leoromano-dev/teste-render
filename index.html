@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha Aplicação Simples</title>
+</head>
+<body>
+  <h1>Minha Aplicação Simples</h1>
+  <p>A mensagem do servidor é: <span id="server-message"></span></p>
+
+  <script>
+    // Função para fazer a requisição HTTP e exibir a mensagem na página
+    function fetchMessage() {
+      fetch('/api/message')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Erro ao obter a mensagem do servidor');
+          }
+          return response.json();
+        })
+        .then(data => {
+          const messageElement = document.getElementById('server-message');
+          messageElement.textContent = data.message;
+        })
+        .catch(error => {
+          console.error('Erro:', error);
+          const messageElement = document.getElementById('server-message');
+          messageElement.textContent = 'Erro ao obter a mensagem do servidor';
+        });
+    }
+
+    // Chamar a função fetchMessage() quando a página carregar
+    document.addEventListener('DOMContentLoaded', fetchMessage);
+  </script>
+</body>
+</html>

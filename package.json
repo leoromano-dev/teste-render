@@ -1,0 +1,12 @@
+{
+    "name": "minha-aplicacao-simples",
+    "version": "1.0.0",
+    "description": "Uma aplicação simples com HTML e Node.js",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "author": "",
+    "license": "MIT"
+  }
+  
