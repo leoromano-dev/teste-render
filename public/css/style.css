@@ -1,0 +1,473 @@
+
+html{
+/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    padding: 0%; */
+    margin: 0%;
+}
+
+body{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.display-progress {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Estilos adicionais para a barra de progresso */
+.progress {
+  width: 200px; /* Largura da barra de progresso */
+  height: 7px; /* Altura da barra de progresso */
+  background-color: #f0f0f0; /* Cor de fundo da barra de progresso */
+  border-radius: 10px; /* Borda arredondada da barra de progresso */
+  overflow: hidden; /* Oculta qualquer conteúdo que estiver fora da barra de progresso */
+  margin-bottom: 0px;
+}
+
+
+.progress-bar {
+  height: 100%; /* Altura da barra de progresso em relação à barra pai */
+  background-color: #3b913f; /* Cor da barra de progresso */
+}
+
+/* Estilo para a barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+    background-color:#c9c9c9
+  }
+  
+  /* Estilo para o rastreamento da barra de rolagem */
+  ::-webkit-scrollbar-track {
+    background-color: transparent; /* Cor de fundo do rastreamento transparente */
+  }
+  
+  /* Estilo para o polegar (barra de rolagem) */
+  ::-webkit-scrollbar-thumb {
+    background-color: #888; /* Cor cinza para a barra de rolagem */
+    border-radius: 5px; /* Bordas arredondadas para o polegar */
+  }
+  
+  /* Estilo para o polegar ao passar o mouse */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Cor cinza mais escura ao passar o mouse */
+  }
+  
+  /* Estilo para o canto da barra de rolagem */
+  ::-webkit-scrollbar-corner {
+    background-color: transparent; /* Cor do canto transparente */
+  }
+  
+  /* Estilo para o botão de rolagem */
+  ::-webkit-scrollbar-button {
+    display: none; /* Ocultar o botão de rolagem */
+  }
+  
+  /* Estilo para os botões de rolagem ao passar o mouse */
+  ::-webkit-scrollbar-button:hover {
+    display: none; /* Ocultar o botão de rolagem ao passar o mouse */
+  }
+  
+  /* Estilo opcional para a barra de rolagem horizontal */
+  ::-webkit-scrollbar-horizontal {
+    height: 10px; /* Altura da barra de rolagem horizontal */
+  }
+  
+  /* Estilo opcional para o polegar da barra de rolagem horizontal */
+  ::-webkit-scrollbar-thumb:horizontal {
+    background-color: #888; /* Cor cinza para o polegar da barra de rolagem horizontal */
+  }
+  
+#list{
+  margin-top: 20px;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    margin: 20px 0; /* Altere o valor conforme necessário */
+}
+
+input[type="text"]:focus {
+  border-color: #007bff; /* Cor da borda ao focar */
+  outline: none;
+  box-shadow: 0 0 5px 0 rgba(0, 123, 255, 0.5); /* Sombra azul ao focar */
+}
+
+header {
+    background-color: #4e4e4e;
+    height: 65px;
+    width: 100vw;
+    /* margin: -9px; */
+    margin-bottom: 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alterado para centralizar verticalmente */
+    font-size: medium;
+    margin-top: 0px;
+}
+
+.logo{
+  background-color: #007bff00;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; /* Alterado para centralizar verticalmente */
+  width: 10vw;
+  height: 65px;
+}
+
+.logo-img{
+width: 100%;
+  /* height: 50px; */
+}
+
+.btns-header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center; /* Alterado para centralizar verticalmente */
+  width: 80vw;
+  height: 65px;
+}
+
+.btn-header-info{
+  background-color: #007bff00;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; /* Alterado para centralizar verticalmente */
+  width: 5vw;
+  height: 65px;
+  font-size: 20px;
+  color:white
+}
+
+.btn-header-info:hover{
+  background-color: #63d669;
+
+  display: flex;
+
+  color: white; /* Adicionado para garantir que o texto seja visível */
+
+  transition: 0.2s;
+}
+
+.custom-icon {
+  font-size: 6rem; /* Define o tamanho do ícone */
+}
+
+a {
+    background-color: #4e4e4e;
+    font-weight:400;
+    display: flex;
+    align-items: center; /* Adicionado para centralizar verticalmente o texto */
+    text-align: center;
+    color: rgb(216, 216, 216); /* Adicionado para garantir que o texto seja visível */
+    height: 100%; /* Para ocupar toda a altura do header */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.in-page{
+    color: rgb(255, 255, 255); /* Adicionado para garantir que o texto seja visível */
+    font-weight:500;
+    box-sizing: border-box;
+    border-bottom: solid;
+    border-width: 5px;
+    border-color: #63d669;
+}
+
+a:hover {
+    background-color: #63d669;
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Adicionado para centralizar verticalmente o texto */
+    text-align: center;
+    color: white; /* Adicionado para garantir que o texto seja visível */
+    height: 100%; /* Para ocupar toda a altura do header */
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: 0.2s;
+}
+
+main{
+    /* min-height: 85vh; */
+    flex: 1 1 0;
+    background-color: transparent;
+    border: 0;
+    text-align: left;
+}
+
+footer {
+    background-color: #4e4e4e;
+    color: white; 
+    height: 55px;
+    width: 100vw;
+    margin: -9px;
+    /* margin-top: 30px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Alterado para centralizar verticalmente */
+    font-size: medium;
+}
+
+.first-line{
+    width: 96.5vw;
+    display: flex;
+    align-items: center;
+}
+
+.first-line-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.first-line-boxes{
+    width: 98vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#createDepartment {
+    width: 170px;
+}
+
+
+/* estilo das linhas  */
+table{
+    width: 98vw;
+}
+
+.userInfoHeader {
+    background-color: rgba(240, 248, 255, 0);
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: 10px;
+    color: #4d4d4d;
+    border-style: solid;
+    border-width: 1px;
+    border-top: #125ecf00;
+    border-left: #125ecf00;
+    border-right: #125ecf00;
+    border-radius: 0;
+}
+
+
+
+.userInfo {
+    background-color: rgb(240, 246, 250);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.statusInfo {
+  width: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Centraliza verticalmente os itens */
+  /* justify-content: space-between;  */
+}
+
+.user-status {
+    width: 10px; /* Largura da bolinha */
+    height: 10px; /* Altura da bolinha */
+    border-radius: 50%; /* Torna o elemento circular */
+    margin-right: 5px;
+}
+
+.status-online{
+  background-color: #4caf50; /* Cor de fundo verde */
+}
+
+.status-away{
+  background-color: #c9bf31; /* Cor de fundo verde */
+}
+
+.status-busy{
+  background-color: #e60909; /* Cor de fundo verde */
+}
+
+.status-offline{
+  background-color: transparent; /* Define o fundo como transparente */
+  border: 1px solid #000; /* Define a borda com 2px de largura e preta */
+}
+
+
+.departmentInfo {
+    background-color: rgb(240, 246, 250);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.userInfo:hover {
+    background-color: rgb(212, 225, 233);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.departmentInfo:hover {
+    background-color: rgb(212, 225, 233);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.button-dept{
+    background-color: #d8d8d800;
+    margin: -10px;
+    color: #000000;
+}
+
+.button-dept:hover{
+    background-color: rgb(164, 192, 211);
+    color: #000000;
+}
+
+
+
+
+tr{
+    border-radius: 4px;
+    margin: 2px;
+}
+
+td {
+width: 5%; /* Altere o valor conforme necessário */
+white-space: nowrap;
+/* Adicione um preenchimento interno para melhorar a aparência */
+}
+
+.icon:hover {
+    background-color: aqua;
+    justify-content: space-between;
+}
+/* fim estilo das linhas  */
+
+button {
+    display: block;
+    margin-left: 10px;
+    padding: 10px 16px;
+    background-color: #156ff5;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-user-btns{
+  display: flex;
+  flex-direction: row;
+
+}
+
+select {
+    border-style: none;
+    background-color: #dcdcdc;
+    margin-left: 10px;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #125dcf;
+}
+
+
+.close-btn:hover{
+    background-color: #00000000;
+}
+
+
+
+.agents-line{
+    justify-content: space-between;
+    padding-left: 5px;
+    height:  30px;
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    padding-right: 5px;
+}
+.agents-line p {
+    padding-top: 10px;
+    align-items: center; /* Alinha verticalmente os elementos <p> */
+  }
+
+.agents-line:hover{
+    background-color: #cee1ec;
+}
+
+.delete-user-btn{
+width: 20px;
+text-align: center;
+cursor: pointer;
+} 
+.delete-user-btn:hover{
+    background-color: #a4b2bb;
+
+} 
+
+
+/* 
+drodown estilo */
+
+
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-height: 200px; 
+    overflow-y: auto;
+  }
+
+  .dropdown-content label {
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Alinha os itens verticalmente */
+    padding: 5px;
+    padding-right: 5px;
+    margin: 5px;
+
+  }
+
+  .dropdown-content text {
+
+    padding-left: 5px;
+
+  }
+
+  .dropdown-content label input[type="checkbox"] {
+    width: 16px; /* Define a largura desejada */
+    height: 16px; /* Define a altura desejada */
+    align-items: center;
+    margin-right: 5px;
+  }
+
+  .dropdown-content label:hover {
+    background-color: #f1f1f1;
+  }
+
+  .show {
+    display: block;
+  }
+
+  /* .btnCell{
+    width: 300px;
+
+    margin-top: 20px;
+  } */

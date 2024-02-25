@@ -1,0 +1,169 @@
+.info-enviroment-content {
+    min-height: 100vh;
+    margin-top: -9px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;  
+}
+
+.info-env-menu{
+    background:  #e4e7ea;
+    border-right: solid;
+    border-width: 1px;
+    border-color: rgb(250, 250, 250);
+    color: #5a5a5a;
+    width: 20%;
+    height: auto;
+}
+
+.info-env-menu h3{
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.options {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    height: 40px; /* Defina a altura desejada para as divs */
+    cursor: pointer;
+  }
+
+.in-options-menu{
+    background:  #c1c5c9;
+}
+
+  .options p {
+    margin: 0; /* Remove as margens padrão dos parágrafos */
+    margin-left: 10px;
+  }
+
+.first-line-env{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info-env-menu .options:hover{
+    background:#f4f5f7;
+    transition:ease-in-out 0.3s;
+}
+
+.info-env-content{
+    background-color: #F7F8FA;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-all-content{
+    background-color: #F7F8FA;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-env-content{
+    background-color: #F7F8FA;
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.env-content-container{
+    height: 95%;
+    width: 95%;
+
+}
+
+.env-content-header{
+    width: 100%;
+    height: 25%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+
+.env-content-wrapper {
+    margin-top: 20px;
+    display: flex; /* Isso fará com que env-content-1 e env-content-2 fiquem na mesma linha */
+    width: 100%; /* Ajuste conforme necessário */
+    justify-content: space-between; /* Distribui os elementos horizontalmente */
+    height: 70%;
+}
+
+.env-content-1{
+    padding: 10px;
+    width: 32%;
+    background-color: white;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.env-content-2{
+    padding: 5px;
+
+    width: 32%;
+    background-color: white;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.env-content-3{
+    padding: 5px;
+
+    width: 32%;
+    background-color: white;
+    height: 100%;
+    border-radius: 10px;
+}
+
+
+.create-env-content{
+
+ padding: 15px;
+ margin: 10px;
+ background-color: rgb(255, 255, 255);
+ height: 100%;
+
+}
+
+
+
+.save-env{
+    margin-top: 20px;
+    margin-left: 0;
+    
+}
+
+input{
+    border-color: #cacaca;
+    margin-bottom: 10px;
+}
+
+
+.implantation-line{
+    margin-bottom: 5px;
+}
+
+.users-env-line{
+    margin-bottom: 10px;
+}

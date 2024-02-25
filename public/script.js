@@ -1,10 +1,22 @@
 // Função para fazer a requisição HTTP e exibir a mensagem na página
 function fetchMessage() {
+    const siteSelected = document.getElementById("statusFilter").value;
+    console.log(siteSelected)
+
     const host = window.location.origin;
     const apiUrl = `${host}/api/message`;
 
-    return fetch(apiUrl)
-      .then(response => {
+    const headers = {
+      "Content-Type": "application/json",
+      "X-Status-Filter": siteSelected,
+    };
+
+    return fetch(apiUrl,{
+      method: "GET",
+      headers: headers,
+    })
+      
+    .then(response => {
         if (!response.ok) {
           throw new Error('Erro ao obter a mensagem do servidor');
         }
@@ -23,7 +35,6 @@ function fetchMessage() {
       });
   }
   
-  // Chamar a função fetchMessage() quando a página carregar
   document.addEventListener('DOMContentLoaded', fetchMessage);
   
   async function displayAgentes(){

@@ -1,45 +1,233 @@
-
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minha Aplicação Simples</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapios Chat - Usuarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Adicionando estilos adicionais -->
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Adicionando scripts do Bootstrap 5 e jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Adicionando seu arquivo de estilo -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_form.css">
+    <link rel="stylesheet" href="css/style-toogle-menu.css">
+    <link rel="stylesheet" href="css/info-enviroment.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
+
+     
 </head>
-<body>
-  <h1>Minha Aplicação Simples</h1>
-  <!-- <p>A mensagem do servidor é: <span id="server-message"></span></p> -->
-  <div id="userData"></div>
-  <div id="list">
-    <table>
-        <tbody>
-            <tr>
-                <td class="inputHeader">
-                    <input type="text" id="searchInput" placeholder="Digite nome, usuário ou email">
-                </td>
-            </tr>
-            <tr class="userInfoHeader">
-                <td>
-                    Nome:
-                </td>
-                <td>
-                    Usuário
-                </td>
-                <td>
-                    Email:
-                </td>
-                <td>
-                    Status:
-                </td>
-                <td>
 
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<body class="box">
+    <div class="header">
+        <header>
+            <div class="logo">
+                <img class="logo-img" src="https://sapios.com.br/novosite/wp-content/uploads/2021/05/sapios-logo2x.png" alt="Imagem de exemplo">
+            </div>
+            <div class="btns-header">
+                <a class="in-page" href="index.html">USUÁRIOS</a>
+                <a href="departamentos.html">DEPARTAMENTOS</a></div>
+                <a href="infos.html">
+                    <div class="btn-header-info">
+                        <i class="bi-5x bi-info-square"></i>
+                    </div>
+                </a>
+            </div>
+        </header>
+    </div>
+    <main>
+        <div class="container">
+            <div class="first-line">
+                <div class="first-line-boxes">
+                    <div class="first-line-box">
+                        <label for="statusFilter">Selecione o ambiente:</label>
+                        <select id="statusFilter" onchange="displayAgentes()">
+                            <option value="https://sapios.chat">Sapios Chat</option>
+                            <option value="https://hapvida.sapios.com.br">Hapvida</option>
+                            <option value="https://sales.sapios.com.br">Sales</option>
+                            <option value="https://hapvidapgc.sapios.com.br">PGC</option>
+                            <option value="https://promed.sapios.com.br">Promed</option>
+                            <option value="https://lifeplace.sapios.chat">Lifeplace</option>
+                        </select>
+                        <button id="load-data-button">Carregar Dados</button>
+                        
+                        <div class="display-progress">
+                            <div id="num-users-lincense"></div>
+                            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="create-user-btns">
+                        <button id="openPopupButton">Criar mais usuarios</button>
+                        <button id="create-user-btn">Criar usuario </button>
+                    </div>
+                </div>
+             </div>   
+            <div id="userData"></div>
+            <div id="list">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="inputHeader">
+                                <input type="text" id="searchInput" placeholder="Digite nome, usuário ou email">
+                            </td>
+                        </tr>
+                        <tr class="userInfoHeader">
+                            <td>
+                                Nome:
+                            </td>
+                            <td>
+                                Usuário
+                            </td>
+                            <td>
+                                Email:
+                            </td>
+                            <td>
+                                Status:
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="error-message"></div>
+            <div id="departmentData"></div>
+        </div>
+        <div id="error-message"></div>
+        <div class="overlay" id="overlay"></div>
+
+        <div class="popup" id="popupForm" style="display: none;">
+            <div class="create-agents-btn">
+                <div class="popup-content">
+                    <h2>Inserir usuários</h2>
+                    <label for="fileInput" class="custom-file-upload">Selecione um arquivo</label>
+                    <input type="file" id="fileInput" onchange="fetchMessage()" />
+                    <div id="fileName"></div>
+                    <div class="button">
+                        <button onclick="fetchMessage()">Enviar</button>
+                    </div>
+                    <div id="successMessage"></div>
+                    <div id="error-message"></div>
+                </div>
+            </div>
+        </div>
 
 
-  <!-- Inclua o arquivo JavaScript -->
-  <script src="script.js"></script>
+        <div class="popup" id="infoForm" style="display: none;">
+                <div class="info-enviroment-content">
+                    <div class="info-env-menu">
+                        <h3>Informações do ambiente</h3>
+                            <div class="options in-options-menu">
+                              <p>Dados do Workspace</p>    
+                            </div>
+                            <div class="options">
+                                <p>Dados de todos Workspaces</p>    
+                            </div>
+                            <div class="options">
+                                <p>Cadastrar novo ambiente</p>    
+                            </div>                      
+                    </div>
+                    <div class="info-env-content">
+                        <div class="env-content-container">
+                            <div class="env-content-header"></div>
+                            <div class="env-content-wrapper">
+                            <div class="env-content-1"></div>
+                            <div class="env-content-2"></div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </main>
+    <div class="container1">
+        <div class="overlay" onclick="closeMenu()"></div>
+        <div class="offcanvas-menu">
+        <button class="close-btn" onclick="closeMenu()">✕</button>
+    </div>
+
+    <footer></footer>
+    <script src="js/components/toggle-menu-components.js" ></script>
+    <script src="js/components/apis-messages.js"></script>
+    <script src="js/requisitions/active-users.js" ></script>
+    <!-- <script src="main.js"></script> -->
+    <script src="script.js" ></script>
+    <!-- <script src="./assets/js/bundle.js"></script> -->
+    <script src="js/script_sendAgent.js"></script>
+    <script src="js/send-agent.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    <script>
+  document.getElementById('openPopupButton').addEventListener('click', function() {
+    document.getElementById('popupForm').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+});
+
+document.getElementById('overlay').addEventListener('click', function() {
+    document.getElementById('popupForm').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('infoForm').style.display = 'none';
+    
+});
+
+
+document.getElementById('info-enviroment').addEventListener('click', function() {
+    document.getElementById('infoForm').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+});
+
+document.getElementById('overlay').addEventListener('click', function() {
+    document.getElementById('infoForm').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+});
+
+    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("searchInput").addEventListener("keyup", function() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("list").getElementsByTagName("table")[0];
+            if (table) {
+                tr = table.getElementsByTagName("tr");
+                for (i = 1; i < tr.length; i++) { // Começando do índice 1 para manter a primeira linha sempre visível
+                    td = tr[i].getElementsByTagName("td");
+                    var matchFound = false;
+                    for (var j = 0; j < td.length; j++) {
+                        if (td[j]) {
+                            txtValue = td[j].textContent || td[j].innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                matchFound = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (matchFound || tr[i].classList.contains('userInfoHeader')) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        });
+    });
+</script>
+
 </body>
+
 </html>

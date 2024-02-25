@@ -1,0 +1,156 @@
+:root{
+    --input-widht:350px;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden; /* Adicionado para evitar a barra de rolagem horizontal quando o menu está fechado */
+}
+
+.container1 {
+    position: relative;
+}
+
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Inicialmente fora da tela */
+    width: 400px;
+    height: 100%;
+    background-color: #f0f0f0;
+    padding: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transition: right 0.3s ease-in-out;
+}
+
+.offcanvas-menu table {
+    width: 100%;
+}
+
+
+.offCanvaInfo{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.depInfoCanva{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: auto;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+.agents {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    max-height: 200px;
+    width: auto;
+}
+
+.agents-container {
+    margin-top: 10px;
+    max-height: 200px;
+    width: auto; 
+}
+
+
+.toggle-btn, .close-btn {
+    cursor: pointer;
+    background-color: #33333300;
+    color: #303030;
+    border: none;
+    padding: 10px;
+    
+}
+
+.btnCell{
+    width: 100%;
+    align-items: flex-end;
+    margin-top: 20px;
+    display: flex!important;
+    justify-content: flex-end!important; 
+    padding-right: 5%;
+  }
+
+
+input{
+    padding-left: 15px;
+    width: 100%;
+    height: 35px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #afafaf;
+    border-radius: 5px;
+}
+
+.btn-delete{
+    background-color: #f50202e7;
+}
+
+.btn-delete:hover{
+    background-color: #be0c0ce7;
+}
+
+
+
+
+
+
+.offcanvas-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.offcanvas-menu li {
+    margin-bottom: 10px;
+}
+
+.main-content {
+    transition: margin-right 0.3s ease-in-out; /* Adicionado para animar a margem direita */
+    padding: 20px;
+}
+
+.menu-closed .main-content {
+    margin-right: 0; /* Margem ajustada para 0 quando o menu está fechado */
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+
+
+
+
+.form-check .form-check-input[type="checkbox"] {
+    transform: scale(1.5); /* Ajuste o valor de escala conforme necessário */
+    outline: none; /* Remove a borda ao focar */
+  }
+
+  /* Estilos para remover a borda ao clicar no elemento */
+  .form-check .form-check-input[type="checkbox"]:focus {
+    outline: none; /* Remove a borda ao focar */
+  }
+
+  .password-isRequired{
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
