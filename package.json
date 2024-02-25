@@ -4,9 +4,11 @@
     "description": "Uma aplicação simples com HTML e Node.js",
     "main": "server.js",
     "scripts": {
-      "start": "node server.js"
+        "start": "node server.js"
     },
     "author": "",
-    "license": "MIT"
-  }
-  
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.18.2"
+    }
+}
